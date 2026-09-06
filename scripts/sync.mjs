@@ -75,6 +75,18 @@ function uniqTags(tags) {
 
 /* ---------- adapters ---------- */
 
+const PV_CDN = "https://cdn.jsdelivr.net/gh/coldxiangyu163/prompt-vault@main/";
+
+function resolvePromptVaultImage(item) {
+  const imgs = item?.images;
+  if (!Array.isArray(imgs) || !imgs.length) return undefined;
+  const raw = String(imgs[0] || "").trim();
+  if (!raw) return undefined;
+  if (/^https?:\/\//i.test(raw)) return raw;
+  const path = raw.replace(/^\.\//, "");
+  return PV_CDN + path;
+}
+
 function adaptPromptVault(raw, src, { snapshot = true } = {}) {
   const arr = Array.isArray(raw) ? raw : [];
   let items = arr;
@@ -84,7 +96,8 @@ function adaptPromptVault(raw, src, { snapshot = true } = {}) {
     if (!item?.prompt) continue;
     const tools = item.tool ? [String(item.tool)] : [];
     const tags = uniqTags([...(item.tags || []), item.style].filter(Boolean));
-    out.push({
+    const image = resolvePromptVaultImage(item);
+    const entry = {
       id: `pv-${item.id || out.length}`,
       title: titleFromPrompt(item.prompt, item.id || "prompt-vault"),
       prompt: String(item.prompt),
@@ -95,7 +108,9 @@ function adaptPromptVault(raw, src, { snapshot = true } = {}) {
       language: detectLang(item.prompt),
       source: sourceMeta(src, item.source_url || src.url),
       author: item.author || "",
-    });
+    };
+    if (image) entry.image = image;
+    out.push(entry);
   }
   return out;
 }

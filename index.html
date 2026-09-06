@@ -26,31 +26,50 @@
       </header>
 
       <section class="toolbar" aria-label="Arama ve filtreler">
-        <div class="search-wrap">
-          <span class="icon" aria-hidden="true">⌕</span>
-          <label class="sr-only" for="search">Prompt ara</label>
-          <input
-            id="search"
-            type="search"
-            placeholder="Prompt, etiket, araç veya kaynak ara…"
-            autocomplete="off"
-          />
+        <div class="toolbar-sticky">
+          <div class="search-wrap">
+            <span class="icon" aria-hidden="true">⌕</span>
+            <label class="sr-only" for="search">Prompt ara</label>
+            <input
+              id="search"
+              type="search"
+              placeholder="Prompt, etiket, araç veya kaynak ara…"
+              autocomplete="off"
+            />
+          </div>
+
+          <div class="toolbar-row">
+            <div class="chips" id="cat-chips" aria-label="Kategori">
+              <!-- filled by JS -->
+            </div>
+            <div class="toolbar-actions">
+              <span class="results-pill" id="results-count" aria-live="polite">— sonuç</span>
+              <button
+                type="button"
+                class="btn btn-filter"
+                id="btn-filters"
+                aria-expanded="false"
+                aria-controls="advanced-filters"
+              >
+                Filtreler ▾
+              </button>
+            </div>
+          </div>
         </div>
 
-        <div class="chips" id="cat-chips" aria-label="Kategori">
-          <!-- filled by JS -->
-        </div>
-        <div class="chips" aria-label="Araçlar">
-          <span class="chip-label">Araç</span>
-          <span id="tool-chips" class="chips" style="display: contents"></span>
-        </div>
-        <div class="chips" aria-label="Kaynaklar">
-          <span class="chip-label">Kaynak</span>
-          <span id="source-chips" class="chips" style="display: contents"></span>
-        </div>
-        <div class="chips" aria-label="Etiketler">
-          <span class="chip-label">Etiket</span>
-          <span id="tag-chips" class="chips" style="display: contents"></span>
+        <div class="advanced-filters" id="advanced-filters" hidden>
+          <div class="chips" aria-label="Araçlar">
+            <span class="chip-label">Araç</span>
+            <span id="tool-chips" class="chips" style="display: contents"></span>
+          </div>
+          <div class="chips" aria-label="Kaynaklar">
+            <span class="chip-label">Kaynak</span>
+            <span id="source-chips" class="chips" style="display: contents"></span>
+          </div>
+          <div class="chips" aria-label="Etiketler">
+            <span class="chip-label">Etiket</span>
+            <span id="tag-chips" class="chips" style="display: contents"></span>
+          </div>
         </div>
       </section>
 
@@ -91,6 +110,9 @@
         <div class="modal-head">
           <h2 id="modal-title">Prompt</h2>
           <button type="button" class="btn btn-ghost" id="modal-close" aria-label="Kapat">✕</button>
+        </div>
+        <div class="modal-image-wrap" id="modal-image-wrap" hidden>
+          <img class="modal-image" id="modal-image" alt="" decoding="async" />
         </div>
         <div class="modal-meta" id="modal-meta"></div>
         <pre class="modal-prompt" id="modal-prompt"></pre>

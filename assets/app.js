@@ -26,14 +26,19 @@
     statusText: $("#status-text"),
     sourceBadges: $("#source-badges"),
     countPill: $("#count-pill"),
+    resultsCount: $("#results-count"),
     catChips: $("#cat-chips"),
     toolChips: $("#tool-chips"),
     sourceChips: $("#source-chips"),
     tagChips: $("#tag-chips"),
     btnRefresh: $("#btn-refresh"),
+    btnFilters: $("#btn-filters"),
+    advancedFilters: $("#advanced-filters"),
     modal: $("#modal-backdrop"),
     modalTitle: $("#modal-title"),
     modalMeta: $("#modal-meta"),
+    modalImageWrap: $("#modal-image-wrap"),
+    modalImage: $("#modal-image"),
     modalPrompt: $("#modal-prompt"),
     modalNeg: $("#modal-neg"),
     modalCopy: $("#modal-copy"),
@@ -126,21 +131,38 @@
     return out;
   }
 
+  const PV_CDN = "https://cdn.jsdelivr.net/gh/coldxiangyu163/prompt-vault@main/";
+
+  function resolvePromptVaultImage(item) {
+    const imgs = item?.images;
+    if (!Array.isArray(imgs) || !imgs.length) return undefined;
+    const raw = String(imgs[0] || "").trim();
+    if (!raw) return undefined;
+    if (/^https?:\/\//i.test(raw)) return raw;
+    const path = raw.replace(/^\.\//, "");
+    return PV_CDN + path;
+  }
+
   function adaptPromptVault(raw, src) {
     return (Array.isArray(raw) ? raw : [])
       .filter((i) => i?.prompt)
-      .map((item) => ({
-        id: `pv-${item.id}`,
-        title: titleFromPrompt(item.prompt, item.id),
-        prompt: String(item.prompt),
-        negative: "",
-        category: "image",
-        tools: item.tool ? [String(item.tool)] : [],
-        tags: uniq([...(item.tags || []), item.style].filter(Boolean)),
-        language: detectLang(item.prompt),
-        source: sourceMeta(src, item.source_url || src.url),
-        author: item.author || "",
-      }));
+      .map((item) => {
+        const image = resolvePromptVaultImage(item);
+        const entry = {
+          id: `pv-${item.id}`,
+          title: titleFromPrompt(item.prompt, item.id),
+          prompt: String(item.prompt),
+          negative: "",
+          category: "image",
+          tools: item.tool ? [String(item.tool)] : [],
+          tags: uniq([...(item.tags || []), item.style].filter(Boolean)),
+          language: detectLang(item.prompt),
+          source: sourceMeta(src, item.source_url || src.url),
+          author: item.author || "",
+        };
+        if (image) entry.image = image;
+        return entry;
+      });
   }
 
   function pickHfText(p) {
@@ -380,7 +402,7 @@
 
   function filtered() {
     const q = state.filter.q.trim().toLowerCase();
-    return state.prompts.filter((p) => {
+    const list = state.prompts.filter((p) => {
       if (state.filter.category !== "all" && p.category !== state.filter.category) return false;
       if (state.filter.tool !== "all" && !(p.tools || []).includes(state.filter.tool)) return false;
       if (state.filter.source !== "all" && p.source?.id !== state.filter.source) return false;
@@ -391,6 +413,9 @@
         .toLowerCase();
       return hay.includes(q);
     });
+    // Prefer prompts with example images first (stable within groups)
+    list.sort((a, b) => Number(Boolean(b.image)) - Number(Boolean(a.image)));
+    return list;
   }
 
   function renderSourceBadges() {
@@ -437,16 +462,22 @@
           .slice(0, 5)
           .map((t) => `<span class="tag">${esc(t)}</span>`)
           .join("");
+        const thumb = p.image
+          ? `<img class="card-thumb" loading="lazy" decoding="async" src="${esc(p.image)}" alt="" onerror="this.hidden=true" />`
+          : "";
         return `<article class="card" data-id="${esc(p.id)}" tabindex="0" role="button">
-          <div class="card-top">
-            <h3 class="card-title">${esc(p.title)}</h3>
-            <span class="cat-dot ${esc(p.category)}">${p.category === "video" ? "video" : "görsel"}</span>
-          </div>
-          <p class="card-prompt">${esc(truncate(p.prompt, 240))}</p>
-          <div class="card-tags">${tags}</div>
-          <div class="card-foot">
-            <span class="card-source" title="${esc(p.source?.repo || "")}">${esc(p.source?.name || p.source?.id || "")}</span>
-            <button type="button" class="btn btn-copy" data-copy="${esc(p.id)}">Kopyala</button>
+          ${thumb}
+          <div class="card-body">
+            <div class="card-top">
+              <h3 class="card-title">${esc(p.title)}</h3>
+              <span class="cat-dot ${esc(p.category)}">${p.category === "video" ? "video" : "görsel"}</span>
+            </div>
+            <p class="card-prompt">${esc(truncate(p.prompt, 240))}</p>
+            <div class="card-tags">${tags}</div>
+            <div class="card-foot">
+              <span class="card-source" title="${esc(p.source?.repo || "")}">${esc(p.source?.name || p.source?.id || "")}</span>
+              <button type="button" class="btn btn-copy" data-copy="${esc(p.id)}">Kopyala</button>
+            </div>
           </div>
         </article>`;
       })
@@ -460,8 +491,10 @@
 
   function render() {
     const list = filtered();
+    const n = list.length.toLocaleString("tr-TR");
     els.countPill.textContent = `${state.prompts.length.toLocaleString("tr-TR")} prompt`;
-    els.statusText.textContent = `${list.length.toLocaleString("tr-TR")} sonuç · ${
+    if (els.resultsCount) els.resultsCount.textContent = `${n} sonuç`;
+    els.statusText.textContent = `${n} sonuç · ${
       state.loadedFrom === "live" ? "canlı kaynaklar" : "yerel snapshot"
     }`;
     renderSourceBadges();
@@ -493,6 +526,17 @@
   function openModal(p) {
     activePrompt = p;
     els.modalTitle.textContent = p.title;
+    if (p.image && els.modalImage && els.modalImageWrap) {
+      els.modalImage.src = p.image;
+      els.modalImage.alt = p.title || "";
+      els.modalImage.onerror = () => {
+        els.modalImageWrap.hidden = true;
+      };
+      els.modalImageWrap.hidden = false;
+    } else if (els.modalImageWrap) {
+      if (els.modalImage) els.modalImage.removeAttribute("src");
+      els.modalImageWrap.hidden = true;
+    }
     els.modalMeta.innerHTML = `
       <span class="cat-dot ${esc(p.category)}">${p.category}</span>
       ${(p.tools || []).map((t) => `<span class="tag">${esc(t)}</span>`).join("")}
@@ -522,7 +566,24 @@
     return state.prompts.find((p) => p.id === id);
   }
 
+  function setAdvancedFiltersOpen(open) {
+    if (!els.advancedFilters || !els.btnFilters) return;
+    els.advancedFilters.hidden = !open;
+    els.btnFilters.setAttribute("aria-expanded", open ? "true" : "false");
+    els.btnFilters.textContent = open ? "Filtreler ▴" : "Filtreler ▾";
+  }
+
   function bind() {
+    // Mobile: advanced filters closed; desktop: open
+    const desktop = window.matchMedia("(min-width: 768px)").matches;
+    setAdvancedFiltersOpen(desktop);
+    if (els.btnFilters) {
+      els.btnFilters.addEventListener("click", () => {
+        const open = els.btnFilters.getAttribute("aria-expanded") !== "true";
+        setAdvancedFiltersOpen(open);
+      });
+    }
+
     let t = null;
     els.search.addEventListener("input", () => {
       clearTimeout(t);
