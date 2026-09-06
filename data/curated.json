@@ -1,0 +1,382 @@
+[
+  {
+    "id": "curated-cafe-01",
+    "title": "Kafe vitrin lattesi — cinematic",
+    "prompt": "Cinematic close-up of a latte art tulip in a matte ceramic cup on a dark walnut cafe counter, soft morning window light, shallow depth of field, steam rising, coffee beans scattered artfully, brand-neutral, photorealistic, 85mm lens, warm color grade.",
+    "negative": "blurry, watermark, logo, text overlay, plastic look",
+    "category": "image",
+    "tools": ["Midjourney", "Flux", "SDXL"],
+    "tags": ["kafe", "latte", "ürün", "yemek", "photoreal"],
+    "language": "en"
+  },
+  {
+    "id": "curated-cafe-02",
+    "title": "Kafe menü flatlay",
+    "prompt": "Overhead flat-lay of a cozy cafe brunch: avocado toast, croissant, orange juice, cappuccino, linen napkin, eucalyptus sprig, soft pastel background, lifestyle food photography, Instagram-ready, natural daylight.",
+    "negative": "messy, cluttered, harsh flash, watermark",
+    "category": "image",
+    "tools": ["Midjourney", "Gemini"],
+    "tags": ["kafe", "flatlay", "brunch", "sosyal medya"],
+    "language": "en"
+  },
+  {
+    "id": "curated-cafe-03",
+    "title": "Türk kahvesi atmosfer",
+    "prompt": "Geleneksel bakır cezve ve fincanda Türk kahvesi, loş ışık, buhar, bakır tepsi, lokum, sade ve sıcak atmosfer, sinematik ürün fotoğrafı, sığ alan derinliği.",
+    "negative": "yapay, watermark, logo",
+    "category": "image",
+    "tools": ["Flux", "Midjourney"],
+    "tags": ["kafe", "türk kahvesi", "kültür", "ürün"],
+    "language": "tr"
+  },
+  {
+    "id": "curated-cafe-04",
+    "title": "Kafe reel — sabah açılış",
+    "prompt": "15s vertical 9:16 UGC cafe reel. SHOT1: hands unlocking glass door at dawn. SHOT2: espresso machine steaming in slow motion. SHOT3: barista pouring latte art. SHOT4: first customer smile at counter. Warm color grade, handheld natural motion, soft Turkish indie music vibe, no logos.",
+    "negative": "static, stock footage look, watermark",
+    "category": "video",
+    "tools": ["Seedance", "Runway", "Kling"],
+    "tags": ["kafe", "reel", "ugc", "sosyal medya"],
+    "language": "en"
+  },
+  {
+    "id": "curated-food-01",
+    "title": "Burger hero shot",
+    "prompt": "Hero product shot of a gourmet smash burger, melted cheese drip, sesame bun, crispy lettuce, studio softbox lighting, dark slate background, droplets of condensation, commercial food advertising, ultra sharp, 8k.",
+    "negative": "greasy mess, low light, watermark, text",
+    "category": "image",
+    "tools": ["Midjourney", "Flux"],
+    "tags": ["yemek", "burger", "reklam", "ürün"],
+    "language": "en"
+  },
+  {
+    "id": "curated-food-02",
+    "title": "Pizza fırından çıkış",
+    "prompt": "Wood-fired margherita pizza pulled from stone oven, cheese stretch in mid-air, flour dust particles in warm backlight, Italian trattoria mood, commercial food photo, mouthwatering.",
+    "negative": "burnt, cold look, watermark",
+    "category": "image",
+    "tools": ["Flux", "Gemini"],
+    "tags": ["yemek", "pizza", "reklam"],
+    "language": "en"
+  },
+  {
+    "id": "curated-food-03",
+    "title": "Tatlı vitrin — baklava",
+    "prompt": "Close-up of golden pistachio baklava layers with honey drizzle, macro detail of flaky phyllo, soft cafe lighting, luxury dessert advertising, Turkish pastry aesthetic.",
+    "negative": "dry, cracked, watermark, logo",
+    "category": "image",
+    "tools": ["Midjourney", "Flux"],
+    "tags": ["yemek", "tatlı", "baklava", "türk"],
+    "language": "en"
+  },
+  {
+    "id": "curated-food-04",
+    "title": "Sağlıklı bowl reklam",
+    "prompt": "Vibrant poke / Buddha bowl from above, colorful vegetables arranged in neat sections, sesame seeds, lime wedge, clean minimal white marble, health brand advertising, bright and fresh.",
+    "negative": "dull colors, messy plating, watermark",
+    "category": "image",
+    "tools": ["Gemini", "Flux"],
+    "tags": ["yemek", "sağlıklı", "bowl", "reklam"],
+    "language": "en"
+  },
+  {
+    "id": "curated-food-05",
+    "title": "Yemek reel — hazırlanış",
+    "prompt": "12s vertical cooking reel. SHOT1: knife chopping fresh herbs. SHOT2: oil sizzle in pan with ingredients flying in. SHOT3: plating with tweezers. SHOT4: final dish beauty shot with steam. Fast cuts, ASMR-friendly sizzle audio cue, warm kitchen lighting, 9:16.",
+    "negative": "slow boring cuts, dark underexposed",
+    "category": "video",
+    "tools": ["Seedance", "Kling"],
+    "tags": ["yemek", "reel", "hazırlanış", "sosyal medya"],
+    "language": "en"
+  },
+  {
+    "id": "curated-product-01",
+    "title": "Kozmetik serum şişesi",
+    "prompt": "Luxury skincare serum bottle on wet glass surface with soft reflections, pastel gradient background, floating water droplets, premium beauty product advertising, softbox studio lighting, elegant minimal.",
+    "negative": "cheap plastic, cluttered, watermark, brand logo",
+    "category": "image",
+    "tools": ["Midjourney", "Flux"],
+    "tags": ["ürün", "kozmetik", "reklam", "lüks"],
+    "language": "en"
+  },
+  {
+    "id": "curated-product-02",
+    "title": "Ayakkabı ürün hero",
+    "prompt": "Floating premium sneaker product shot, dynamic angle, subtle motion blur on laces, clean gradient backdrop, commercial e-commerce hero image, crisp shadows, high-end sportswear ad.",
+    "negative": "dirty, worn, watermark, text",
+    "category": "image",
+    "tools": ["Flux", "SDXL"],
+    "tags": ["ürün", "ayakkabı", "e-ticaret"],
+    "language": "en"
+  },
+  {
+    "id": "curated-product-03",
+    "title": "Teknoloji gadget unboxing vibe",
+    "prompt": "Minimalist product still of a sleek wireless earbud case open on brushed aluminum desk, soft rim light, tech advertising aesthetic, cold blue accents, ultra clean.",
+    "negative": "clutter, cables mess, watermark",
+    "category": "image",
+    "tools": ["Gemini", "Midjourney"],
+    "tags": ["ürün", "teknoloji", "reklam"],
+    "language": "en"
+  },
+  {
+    "id": "curated-product-04",
+    "title": "Mum / home fragrance",
+    "prompt": "Artisan soy candle with soft flame, dried flowers around jar, cozy evening ambience, warm bokeh fairy lights, lifestyle product photography for boutique brand.",
+    "negative": "harsh light, smoke overload, watermark",
+    "category": "image",
+    "tools": ["Flux", "Midjourney"],
+    "tags": ["ürün", "ev", "mum", "lifestyle"],
+    "language": "en"
+  },
+  {
+    "id": "curated-product-05",
+    "title": "Ürün dönüş animasyonu",
+    "prompt": "8s product turntable video, matte black perfume bottle rotating 360 degrees on seamless white cyclorama, soft specular highlights, slow elegant motion, commercial packshot style, 9:16 for Reels.",
+    "negative": "jitter, reflections of camera, watermark",
+    "category": "video",
+    "tools": ["Seedance", "Runway"],
+    "tags": ["ürün", "packshot", "reel", "reklam"],
+    "language": "en"
+  },
+  {
+    "id": "curated-social-01",
+    "title": "İndirim duyurusu story",
+    "prompt": "Bold vertical social media story design for a 40% cafe discount: large readable Turkish headline area (leave blank for text overlay), coffee cup hero photo, energetic warm orange palette, modern sans-serif space, Instagram Story 9:16 composition.",
+    "negative": "illegible text, cluttered, watermark",
+    "category": "image",
+    "tools": ["Gemini", "Midjourney"],
+    "tags": ["sosyal medya", "story", "indirim", "kafe"],
+    "language": "bilingual"
+  },
+  {
+    "id": "curated-social-02",
+    "title": "Before/after spa reel",
+    "prompt": "10s vertical before-after spa treatment reel. Left-to-right wipe transition from tired skin close-up to glowing hydrated skin, soft clinic lighting, clean aesthetic, subtle sparkle particles on reveal, beauty brand UGC style.",
+    "negative": "medical gore, unrealistic plastic skin",
+    "category": "video",
+    "tools": ["Kling", "Seedance"],
+    "tags": ["sosyal medya", "reel", "güzellik", "before-after"],
+    "language": "en"
+  },
+  {
+    "id": "curated-social-03",
+    "title": "Restoran gece ambiyans",
+    "prompt": "Moody night interior of a boutique restaurant, candlelit tables, bokeh fairy lights, couple toasting softly in background (faces soft-focus), warm cinematic color grade, hospitality advertising.",
+    "negative": "empty cold room, harsh neon, watermark",
+    "category": "image",
+    "tools": ["Midjourney", "Flux"],
+    "tags": ["restoran", "ambiyans", "reklam", "gece"],
+    "language": "en"
+  },
+  {
+    "id": "curated-social-04",
+    "title": "Hook + CTA food reel",
+    "prompt": "15s vertical food ad reel structure: 0-2s HOOK extreme close-up cheese pull; 2-8s rapid cuts of kitchen energy; 8-12s plated dish beauty; 12-15s end card space for brand CTA. Energetic pacing, punchy transitions, appetizing warm tones.",
+    "negative": "slow pacing, dull food",
+    "category": "video",
+    "tools": ["Seedance", "Kling"],
+    "tags": ["reel", "yemek", "reklam", "hook"],
+    "language": "en"
+  },
+  {
+    "id": "curated-cafe-05",
+    "title": "Barista portre — marka",
+    "prompt": "Portrait of a friendly barista behind espresso machine, soft natural window light, apron (blank for brand), steam swirling, authentic smile, lifestyle cafe branding photo, shallow DOF.",
+    "negative": "stock smile fake, watermark, logo",
+    "category": "image",
+    "tools": ["Flux", "Midjourney"],
+    "tags": ["kafe", "barista", "portre", "marka"],
+    "language": "en"
+  },
+  {
+    "id": "curated-cafe-06",
+    "title": "Mevsimsel içecek afiş",
+    "prompt": "Seasonal pumpkin spice latte in glass mug with whipped cream and cinnamon dust, autumn leaves props, warm amber tones, cafe seasonal campaign poster background (leave text-safe top third empty).",
+    "negative": "summer vibes, cluttered text, watermark",
+    "category": "image",
+    "tools": ["Gemini", "Midjourney"],
+    "tags": ["kafe", "mevsimsel", "içecek", "kampanya"],
+    "language": "en"
+  },
+  {
+    "id": "curated-food-06",
+    "title": "Sokak lezzeti dürüm",
+    "prompt": "Turkish street-food dürüm wrap cut in half showing juicy filling, charcoal grill smoke soft in background, night bazaar lights bokeh, appetizing commercial food photo, vibrant colors.",
+    "negative": "dry wrap, dirty stall, watermark",
+    "category": "image",
+    "tools": ["Flux", "Midjourney"],
+    "tags": ["yemek", "sokak lezzeti", "türk", "dürüm"],
+    "language": "bilingual"
+  },
+  {
+    "id": "curated-food-07",
+    "title": "Kahvaltı tabağı reklam",
+    "prompt": "Generous Turkish breakfast plate: cheeses, olives, tomatoes, cucumbers, honey-kaymak, simit, tea in thin-waisted glass, rustic wooden table, morning sunlight, hospitality brand advertising.",
+    "negative": "empty plate, cold light, watermark",
+    "category": "image",
+    "tools": ["Midjourney", "Gemini"],
+    "tags": ["yemek", "kahvaltı", "türk", "reklam"],
+    "language": "bilingual"
+  },
+  {
+    "id": "curated-product-06",
+    "title": "Ambalaj mockup — poşet kahve",
+    "prompt": "Matte stand-up coffee bag mockup on marble counter, blank front panel for logo placement, scattered roasted beans, soft morning light, premium specialty coffee packaging presentation.",
+    "negative": "existing logos, wrinkled cheap bag, watermark",
+    "category": "image",
+    "tools": ["Flux", "SDXL"],
+    "tags": ["ürün", "ambalaj", "kahve", "mockup"],
+    "language": "en"
+  },
+  {
+    "id": "curated-product-07",
+    "title": "Takı makro ışıltı",
+    "prompt": "Macro jewelry product shot of a delicate gold necklace on soft velvet, specular sparkle highlights, luxury e-commerce aesthetic, clean composition, soft gradient backdrop.",
+    "negative": "tarnished, cluttered props, watermark",
+    "category": "image",
+    "tools": ["Midjourney", "Flux"],
+    "tags": ["ürün", "takı", "lüks", "e-ticaret"],
+    "language": "en"
+  },
+  {
+    "id": "curated-social-05",
+    "title": "Müşteri testimonial kartı",
+    "prompt": "Clean social testimonial graphic background: soft gradient peach to cream, large quote mark motif, circular photo placeholder on left, generous text-safe area on right, cafe/restaurant brand friendly, Instagram post 1:1.",
+    "negative": "busy pattern, tiny text area, watermark",
+    "category": "image",
+    "tools": ["Gemini", "Midjourney"],
+    "tags": ["sosyal medya", "testimonial", "grafik"],
+    "language": "bilingual"
+  },
+  {
+    "id": "curated-social-06",
+    "title": "Açılış günü reel",
+    "prompt": "20s grand opening cafe reel. Sequence: ribbon cut wide shot, crowd cheer, interior reveal tracking shot, first coffee pour close-up, happy team group moment. Celebratory energy, golden hour exterior, vertical 9:16.",
+    "negative": "empty venue, sad mood",
+    "category": "video",
+    "tools": ["Seedance", "Kling", "Runway"],
+    "tags": ["kafe", "açılış", "reel", "etkinlik"],
+    "language": "en"
+  },
+  {
+    "id": "curated-ads-01",
+    "title": "Yerel işletme Google Ads görseli",
+    "prompt": "Bright welcoming storefront photo of a small local bakery with open sign, fresh bread in window, sunny sidewalk, optimistic commercial advertising look suitable for Google Display / Meta ads, leave sky area clean for headline overlay.",
+    "negative": "abandoned, graffiti, watermark, logos",
+    "category": "image",
+    "tools": ["Flux", "Gemini"],
+    "tags": ["reklam", "yerel işletme", "vitrin", "ads"],
+    "language": "en"
+  },
+  {
+    "id": "curated-ads-02",
+    "title": "Hizmet sektörü güven görseli",
+    "prompt": "Professional service brand image: clean desk, laptop, notebook, plant, soft daylight office, trust and clarity mood for consulting / agency ads, minimal and modern, space for logo top-right.",
+    "negative": "messy papers, dark basement, watermark",
+    "category": "image",
+    "tools": ["Midjourney", "Flux"],
+    "tags": ["reklam", "hizmet", "ofis", "güven"],
+    "language": "en"
+  },
+  {
+    "id": "curated-ads-03",
+    "title": "Flash sale motion",
+    "prompt": "6s vertical flash-sale motion graphic vibe: product hero zooms in, price tag animates with energy streaks, countdown urgency feel, bold red-black palette, end with blank CTA bar. No readable fake brand names.",
+    "negative": "slow, pastel calm, watermark",
+    "category": "video",
+    "tools": ["Seedance", "Runway"],
+    "tags": ["reklam", "indirim", "motion", "reel"],
+    "language": "en"
+  },
+  {
+    "id": "curated-food-08",
+    "title": "Dondurma yaz kampanyası",
+    "prompt": "Three scoop artisanal ice cream in waffle cone, melting drip, sunny outdoor cafe table, summer campaign vibe, vivid colors, commercial food photography, cheerful.",
+    "negative": "melted puddle mess, winter mood, watermark",
+    "category": "image",
+    "tools": ["Flux", "Midjourney"],
+    "tags": ["yemek", "dondurma", "yaz", "kampanya"],
+    "language": "en"
+  },
+  {
+    "id": "curated-cafe-07",
+    "title": "Workspace cafe laptop",
+    "prompt": "Lifestyle shot of open laptop and cappuccino on cafe table by window, city soft bokeh outside, remote work / digital nomad cafe branding, cozy productive mood, natural light.",
+    "negative": "screen showing readable UI brands, watermark",
+    "category": "image",
+    "tools": ["Gemini", "Flux"],
+    "tags": ["kafe", "workspace", "lifestyle"],
+    "language": "en"
+  },
+  {
+    "id": "curated-product-08",
+    "title": "Giyim lookbook düzayak",
+    "prompt": "Flat-lay clothing lookbook: folded premium t-shirt, jeans, sneakers, watch, sunglasses arranged symmetrically on concrete texture, fashion e-commerce aesthetic, soft shadows.",
+    "negative": "wrinkled pile, dirty floor, watermark",
+    "category": "image",
+    "tools": ["Midjourney", "SDXL"],
+    "tags": ["ürün", "moda", "lookbook", "e-ticaret"],
+    "language": "en"
+  },
+  {
+    "id": "curated-social-07",
+    "title": "Stories highlight kapak seti",
+    "prompt": "Set of 4 cohesive Instagram highlight cover icons for a cafe: coffee cup, pastry, location pin, heart — minimal line icons on warm terracotta circle backgrounds, consistent stroke weight, brand kit style.",
+    "negative": "photoreal clutter, inconsistent styles",
+    "category": "image",
+    "tools": ["Gemini", "Midjourney"],
+    "tags": ["sosyal medya", "highlight", "ikon", "kafe"],
+    "language": "en"
+  },
+  {
+    "id": "curated-video-01",
+    "title": "Menemen pişirme ASMR",
+    "prompt": "12s vertical ASMR cooking: eggs cracking into sizzling menemen pan, peppers and tomatoes already soft, slow spoon stir, steam close-up, final scoop onto plate. Warm kitchen light, satisfying sound-design friendly visuals, Turkish breakfast vibe.",
+    "negative": "burnt food, chaotic cuts",
+    "category": "video",
+    "tools": ["Seedance", "Kling"],
+    "tags": ["yemek", "türk", "asmr", "reel"],
+    "language": "bilingual"
+  },
+  {
+    "id": "curated-ads-04",
+    "title": "Kurye / teslimat reklam",
+    "prompt": "Friendly delivery courier handing paper bag with cafe logo placeholder to customer at door, sunny residential street, trust and speed mood for delivery service ad, photoreal.",
+    "negative": "rain misery, damaged packaging, watermark",
+    "category": "image",
+    "tools": ["Flux", "Gemini"],
+    "tags": ["reklam", "teslimat", "kafe", "hizmet"],
+    "language": "en"
+  },
+  {
+    "id": "curated-product-09",
+    "title": "İçecek kutu packshot",
+    "prompt": "Condensation-covered cold drink can on ice bed, splash droplets frozen in air, dark dramatic backdrop with cyan rim light, beverage commercial packshot, ultra sharp.",
+    "negative": "warm flat lighting, dented can, watermark",
+    "category": "image",
+    "tools": ["Midjourney", "Flux"],
+    "tags": ["ürün", "içecek", "packshot", "reklam"],
+    "language": "en"
+  },
+  {
+    "id": "curated-social-08",
+    "title": "Takım / behind the scenes",
+    "prompt": "Behind-the-scenes cafe team photo: three staff laughing while plating desserts, open kitchen, genuine moment, employer branding / social proof post, warm candid lighting.",
+    "negative": "posed stiff, empty kitchen, watermark",
+    "category": "image",
+    "tools": ["Flux", "Midjourney"],
+    "tags": ["sosyal medya", "ekip", "bts", "kafe"],
+    "language": "en"
+  },
+  {
+    "id": "curated-video-02",
+    "title": "Ürün unboxing soft",
+    "prompt": "10s vertical soft unboxing: hands open kraft box, tissue paper reveal of skincare bottle, slow rotate of product, satisfied close-up. Soft pastel room, ASMR-friendly gentle motion, beauty UGC.",
+    "negative": "violent tear, messy room",
+    "category": "video",
+    "tools": ["Seedance", "Kling"],
+    "tags": ["ürün", "unboxing", "ugc", "reel"],
+    "language": "en"
+  }
+]

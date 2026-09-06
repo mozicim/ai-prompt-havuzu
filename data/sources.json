@@ -1,0 +1,48 @@
+{
+  "updated": "2026-09-06",
+  "sources": [
+    {
+      "id": "prompt-vault",
+      "name": "prompt-vault",
+      "repo": "coldxiangyu163/prompt-vault",
+      "url": "https://github.com/coldxiangyu163/prompt-vault",
+      "license": "Unknown / check upstream",
+      "fetch": "https://cdn.jsdelivr.net/gh/coldxiangyu163/prompt-vault@main/data/prompts.json",
+      "adapter": "prompt-vault",
+      "categoryDefault": "image",
+      "snapshotLimit": 2000,
+      "snapshotIncludeAllIfUnderBytes": 8388608
+    },
+    {
+      "id": "hongforge",
+      "name": "hongforge ai_skills",
+      "repo": "hongforge/ai_skills",
+      "url": "https://github.com/hongforge/ai_skills",
+      "license": "MIT",
+      "fetch": "https://cdn.jsdelivr.net/gh/hongforge/ai_skills@main/data/prompt-library.json",
+      "adapter": "hongforge",
+      "categoryDefault": "image"
+    },
+    {
+      "id": "seedance-video",
+      "name": "awesome-seedance-prompts",
+      "repo": "HuyLe82US/awesome-seedance-prompts",
+      "url": "https://github.com/HuyLe82US/awesome-seedance-prompts",
+      "license": "MIT",
+      "fetch": "github-api",
+      "adapter": "seedance-video",
+      "categoryDefault": "video",
+      "toolDefault": "Seedance"
+    },
+    {
+      "id": "local-curated",
+      "name": "Yerel kürasyon",
+      "repo": "mozicim/ai-prompt-havuzu",
+      "url": "https://github.com/mozicim/ai-prompt-havuzu",
+      "license": "MIT",
+      "fetch": "local",
+      "adapter": "local-curated",
+      "localPath": "data/curated.json"
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="AI Prompt Havuzu — GitHub prompt havuzlarından beslenen Türkçe öncelikli görsel/video prompt tarayıcısı."
+    />
+    <title>AI Prompt Havuzu</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="header">
+        <div class="brand">
+          <h1>AI Prompt Havuzu</h1>
+          <p class="tagline">
+            GitHub’daki açık prompt havuzlarından beslenen hızlı tarayıcı — ara, filtrele, tek tıkla kopyala.
+          </p>
+        </div>
+        <div class="header-meta">
+          <span class="stat-pill" id="count-pill">— prompt</span>
+          <button type="button" class="btn btn-primary" id="btn-refresh">Kaynaklardan yenile</button>
+        </div>
+      </header>
+
+      <section class="toolbar" aria-label="Arama ve filtreler">
+        <div class="search-wrap">
+          <span class="icon" aria-hidden="true">⌕</span>
+          <label class="sr-only" for="search">Prompt ara</label>
+          <input
+            id="search"
+            type="search"
+            placeholder="Prompt, etiket, araç veya kaynak ara…"
+            autocomplete="off"
+          />
+        </div>
+
+        <div class="chips" id="cat-chips" aria-label="Kategori">
+          <!-- filled by JS -->
+        </div>
+        <div class="chips" aria-label="Araçlar">
+          <span class="chip-label">Araç</span>
+          <span id="tool-chips" class="chips" style="display: contents"></span>
+        </div>
+        <div class="chips" aria-label="Kaynaklar">
+          <span class="chip-label">Kaynak</span>
+          <span id="source-chips" class="chips" style="display: contents"></span>
+        </div>
+        <div class="chips" aria-label="Etiketler">
+          <span class="chip-label">Etiket</span>
+          <span id="tag-chips" class="chips" style="display: contents"></span>
+        </div>
+      </section>
+
+      <div class="status-bar">
+        <div id="status-text">Yükleniyor…</div>
+        <div class="badge-row" id="source-badges"></div>
+      </div>
+
+      <main id="grid" class="grid" aria-live="polite">
+        <div class="loading"><div class="spinner"></div>Yükleniyor…</div>
+      </main>
+
+      <footer class="footer">
+        <h3>Kaynaklar</h3>
+        <ul id="footer-sources"></ul>
+        <p>
+          Veriler GitHub havuzlarından beslenir. Üçüncü taraf promptlar kendi lisanslarını korur; bu
+          uygulamanın kodu MIT ile lisanslanmıştır.
+        </p>
+        <p>
+          Repo:
+          <a href="https://github.com/mozicim/ai-prompt-havuzu" target="_blank" rel="noopener"
+            >mozicim/ai-prompt-havuzu</a
+          >
+        </p>
+      </footer>
+    </div>
+
+    <div
+      class="modal-backdrop"
+      id="modal-backdrop"
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-title"
+    >
+      <div class="modal">
+        <div class="modal-head">
+          <h2 id="modal-title">Prompt</h2>
+          <button type="button" class="btn btn-ghost" id="modal-close" aria-label="Kapat">✕</button>
+        </div>
+        <div class="modal-meta" id="modal-meta"></div>
+        <pre class="modal-prompt" id="modal-prompt"></pre>
+        <div class="modal-neg" id="modal-neg" hidden></div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-primary" id="modal-copy">Promptu kopyala</button>
+          <a class="btn" id="modal-open-source" href="#" target="_blank" rel="noopener">Kaynağı aç</a>
+        </div>
+      </div>
+    </div>
+
+    <script src="assets/app.js" defer></script>
+  </body>
+</html>
